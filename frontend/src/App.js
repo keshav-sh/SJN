@@ -1,46 +1,33 @@
 import React from 'react';
+import Product from './components/Product';
 import data from './data'; 
+import {BrowserRouter} from 'react-router-dom';
+
 
 function App() {
   return (
+    <BrowserRouter>
     <div className="grid-container">
     <header className="row">
       <div>
-        <a className="brand" href="index.html">SJN</a>
+        <a className="brand" href="/">SJN</a>
       </div>
       <div>
-        <a href="cart.html">Cart</a>
-        <a href="signin.html">Sign In</a>
+        <a href="/cart">Cart</a>
+        <a href="/signin">Sign In</a>
       </div>
     </header>
     <main>
       <div className="row center">{
         data.products.map(products => (
-         < div key={products._id} className="card">
-          <a href={`/products/${products.id}`}>
-            <img className="medium" src={products.image} alt={products.name}/>
-          </a>
-          <div className="card-body">
-             <a href={`/products/${products.id}`}>
-              <h2>{products.name}</h2>
-            </a>
-            <div className="rating">
-              <span> <i className="fa fa-star"></i></span>
-              <span><i className="fa fa-star"></i></span>
-              <span><i className="fa fa-star"></i></span>
-              <span><i className="fa fa-star"></i></span>
-              <span><i className="fa fa-star-half-o"></i></span>
-              <span><i className="fa fa-star-o"></i></span>
-            </div>
-            <div className="price">${products.price}</div>
-          </div>
-        </div>
+         <Product  key={products._id} products={products}></Product>
         ))
       } 
       </div>
     </main>
     <footer className="row center">All Right Reserved</footer>
   </div>
+  </BrowserRouter>
   )
 }
 

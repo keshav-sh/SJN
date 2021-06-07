@@ -8,7 +8,7 @@ const data = {
             price: 700,
             brand:'A1',
             rating:4.5,
-            numReview:10,
+            numReviews:12,
             description: 'high quality products'
         },
         {
@@ -19,7 +19,7 @@ const data = {
             price: 800,
             brand:'A2',
             rating:4.5,
-            numReview:10,
+            numReviews:10,
             description: 'high quality products'
         },        {
             _id: '3',
@@ -29,7 +29,7 @@ const data = {
             price: 750,
             brand:'A4',
             rating:5,
-            numReview:9,
+            numReviews:10,
             description: 'high quality products'
         },        {
             _id: '4',
@@ -39,7 +39,7 @@ const data = {
             price: 600,
             brand:'A4',
             rating:4,
-            numReview:6,
+            numReviews:6,
             description: 'high quality products'
         },        {
             _id: '5',
@@ -49,7 +49,7 @@ const data = {
             price: 780,
             brand:'A5',
             rating:3.5,
-            numReview:10,
+            numReviews:10,
             description: 'high quality products'
         },        {
             _id: '6',
@@ -59,7 +59,7 @@ const data = {
             price: 850,
             brand:'A6',
             rating:5,
-            numReview:11,
+            numReviews:11,
             description: 'high quality products'
         },
     ],
