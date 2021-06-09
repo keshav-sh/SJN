@@ -48,13 +48,13 @@ function ProductScreen(props) {
                                 <div >
                                     {product.countInstock>0? (<span className="success">In stock</span>
                                     ):(
-                                    <span className="error">Unavailable</span>)
+                                    <span className="danger">Unavailable</span>)
                                     }
                                 </div>
                             </div>
                         </li>
                         <li>
-                            <button className="Primary block">Add to cart</button>
+                            <button className="primary block">Add to cart</button>
                         </li>
                     </ul>
                 </div>
