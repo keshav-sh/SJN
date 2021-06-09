@@ -68,11 +68,21 @@ a.brand{
 .row.center{
   justify-content: center;
 }
+.row.top{
+  align-items: flex-start;
+}
+.col-1{
+  flex:1 1 25 rem;
+}
+.col-2{
+  flex:2 1 50 rem;
+}
+
 img{
-  border-radius: 0.5rem;
+  border-radius: 1.5rem;
 }
 img.medium{
-  max-width: 32rem;
+  max-width: 29rem;
   width:100%
 
 }
