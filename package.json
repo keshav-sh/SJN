@@ -1,10 +1,10 @@
 {
   "name": "sjn",
-  "type":"module",
+  "type": "module",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start":"nodemon --watch backend --exec node --experimental-modules backend/server.js"
+    "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,9 @@
   "description": "",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.28.0",
+    "eslint-plugin-react": "^7.24.0"
   }
 }
