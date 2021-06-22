@@ -40,7 +40,7 @@ const data = {
             category: 'shirts',
             image: '/images/product-4.jpg',
             price: 600,
-            countInstock: 0,
+            countInstock: 14,
             brand:'A4',
             rating:4,
             numReviews:6,

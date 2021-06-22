@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,12 +10,16 @@ import { detailsProduct } from '../actions/productAction';
 function ProductScreen(props) {
     const dispatch = useDispatch();
     const productId = props.match.params.id;
+    const [qty, setQty] = useState(1);
     const productDetails = useSelector(state => state.productDetails);
     const { loading, error, product} = productDetails;
 
     useEffect(() =>{
         dispatch(detailsProduct(productId));
     }, [dispatch, productId]);
+    const addToCartHandler =() =>{
+        props.history.push(`/cart/${productId}?qty=${qty}`);
+    };
 
     return (
         <div>
@@ -40,7 +44,7 @@ function ProductScreen(props) {
                             numReviews={product.numReviews}>
                         </Rating>
                     </li>
-                    <li>Price : Rs{product.price}</li>
+                    <li>Price : Rs {product.price}</li>
                     <li>
                         Description :
                         <p>{product.description}</p>
@@ -53,23 +57,49 @@ function ProductScreen(props) {
                         <li>
                             <div className="row">
                                 <div>Price</div>
-                                <div className="price">Rs{product.price}</div>
+                                <div className="price">Rs {product.price}</div>
                             </div>
                         </li>
                         <li>
                             <div className="row">
-                                <div>Staus</div>
+                                <div>Status</div>
                                 <div >
-                                    {product.countInstock>0? (<span className="success">In stock</span>
+                                    {product.countInstock > 0
+                                    ? (<span className="success">In stock</span>
                                     ):(
                                     <span className="danger">Unavailable</span>)
                                     }
                                 </div>
                             </div>
                         </li>
-                        <li>
-                            <button className="primary block">Add to cart</button>
-                        </li>
+                        {
+                            product.countInstock > 0 && (
+                                <>
+                                <li>
+                                    <div className="row">
+                                        <div>OTY</div>
+                                        <div>
+                                            <select 
+                                            value={qty} 
+                                            onChange={e => setQty(e.target.value)}>
+                                                {
+                                                    [...Array(product.countInstock).keys()].map( 
+                                                        (x) => (
+                                                        <option key={x+1} value={x +1}>{x + 1}</option>
+                                                    ))
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <button 
+                                    onClick={addToCartHandler} 
+                                    className="primary block">Add to cart</button>
+                                 </li>
+                            </>     
+                            )
+                        } 
                     </ul>
                 </div>
             </div>
