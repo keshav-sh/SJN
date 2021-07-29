@@ -11,7 +11,7 @@ import {
 } from "./reducers/userReducers";
 
 const initialState = {
-  userSigin: {
+  userSignin: {
     userInfo: localStorage.getItem("userInfo")
       ? JSON.parse(localStorage.getItem("userInfo"))
       : null,
@@ -23,6 +23,7 @@ const initialState = {
     shippingAddress: localStorage.getItem("shippingAddress")
       ? JSON.parse(localStorage.getItem("shippingAddress"))
       : {},
+    paymentMethod: "Paypal",
   },
 };
 const reducer = combineReducers({
