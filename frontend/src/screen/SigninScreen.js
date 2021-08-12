@@ -17,7 +17,7 @@ function SigninScreen(props) {
   const { userInfo, loading, error } = userSignin;
 
   const dispatch = useDispatch();
-  const SubmitHandler = (e) => {
+  const submitHandler = (e) => {
     e.preventDefault();
     dispatch(signin(email, password));
   };
@@ -28,7 +28,7 @@ function SigninScreen(props) {
   }, [props.history, redirect, userInfo]);
   return (
     <div>
-      <form className="form" onSubmit={SubmitHandler}>
+      <form className="form" onSubmit={submitHandler}>
         <div>
           <h1>Sign In</h1>
         </div>
