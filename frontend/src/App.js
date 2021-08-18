@@ -8,6 +8,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import CartScreen from "./screen/CartScreen";
 import HomeScreen from "./screen/HomeScreen";
 import OrderHistoryScreen from "./screen/OrderHistoryScreen";
+import OrderListScreen from "./screen/OrderListScreen";
 import OrderScreen from "./screen/OrderScreen";
 import PaymentMethodScreen from "./screen/PaymentMethodScreen";
 import PlaceOrderScreen from "./screen/PlaceOrderScreen";
@@ -111,6 +112,10 @@ function App() {
           <AdminRoute
             path="/productlist"
             component={ProductListScreen}
+          ></AdminRoute>
+          <AdminRoute
+            path="/orderlist"
+            component={OrderListScreen}
           ></AdminRoute>
           <Route path="/" component={HomeScreen} exact></Route>
         </main>
